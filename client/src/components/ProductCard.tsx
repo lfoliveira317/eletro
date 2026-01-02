@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Link } from "wouter";
+import { useCart } from "@/contexts/CartContext";
 
 export interface Product {
   id: string;
@@ -18,6 +19,7 @@ export interface Product {
 }
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addToCart } = useCart();
   // Generate stars array
   const stars = Array(5).fill(0).map((_, i) => i < Math.floor(product.rating));
 
@@ -71,7 +73,10 @@ export default function ProductCard({ product }: { product: Product }) {
       </CardContent>
       
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm h-8 text-xs shadow-sm">
+        <Button 
+          onClick={() => addToCart(product)}
+          className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm h-8 text-xs shadow-sm"
+        >
           Add to Cart
         </Button>
       </CardFooter>

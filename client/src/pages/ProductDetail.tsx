@@ -7,11 +7,13 @@ import { Separator } from "@/components/ui/separator";
 import { Star, Truck, ShieldCheck, RotateCcw, MapPin } from "lucide-react";
 import productsData from "@/data/products.json";
 import { Product } from "@/components/ProductCard";
+import { useCart } from "@/contexts/CartContext";
 
 export default function ProductDetail() {
   const [match, params] = useRoute("/product/:id");
   const [product, setProduct] = useState<Product | null>(null);
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (match && params?.id) {
@@ -137,7 +139,10 @@ export default function ProductDetail() {
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full shadow-sm">
+                  <Button 
+                    onClick={() => product && addToCart(product, quantity)}
+                    className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full shadow-sm"
+                  >
                     Add to Cart
                   </Button>
                   <Button className="w-full bg-orange-400 hover:bg-orange-500 text-slate-900 font-bold rounded-full shadow-sm">

@@ -1,4 +1,5 @@
 import { Link, useLocation } from "wouter";
+import { useCart } from "@/contexts/CartContext";
 import { Search, ShoppingCart, Menu, User, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
+  const { cartCount } = useCart();
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans">
@@ -66,9 +68,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <a className="flex items-end hover:outline outline-1 outline-white p-2 rounded relative">
                 <div className="relative">
                   <ShoppingCart className="h-7 w-7" />
-                  <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 bg-secondary text-white border-none rounded-full">
-                    0
-                  </Badge>
+                  {cartCount > 0 && (
+                    <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 bg-secondary text-white border-none rounded-full">
+                      {cartCount}
+                    </Badge>
+                  )}
                 </div>
                 <span className="font-bold ml-1 hidden sm:inline">Cart</span>
               </a>

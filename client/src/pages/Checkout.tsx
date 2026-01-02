@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCart } from "@/contexts/CartContext";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,14 @@ import { CheckCircle2, CreditCard, Truck } from "lucide-react";
 export default function Checkout() {
   const [, setLocation] = useLocation();
   const [isProcessing, setIsProcessing] = useState(false);
+  const { cartTotal, cartCount, clearCart } = useCart();
+
+  // Redirect if cart is empty
+  useEffect(() => {
+    if (cartCount === 0) {
+      setLocation("/cart");
+    }
+  }, [cartCount, setLocation]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +28,7 @@ export default function Checkout() {
     // Simulate processing
     setTimeout(() => {
       setIsProcessing(false);
+      clearCart(); // Clear cart on successful order
       setLocation("/order-success");
     }, 2000);
   };
@@ -112,21 +122,21 @@ export default function Checkout() {
               </CardHeader>
               <CardContent className="pt-4 space-y-4">
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600">Items (1):</span>
-                  <span className="font-medium">$49.99</span>
+                  <span className="text-slate-600">Items ({cartCount}):</span>
+                  <span className="font-medium">${cartTotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-600">Shipping:</span>
                   <span className="font-medium text-green-600">FREE</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-600">Tax:</span>
-                  <span className="font-medium">$4.00</span>
+                  <span className="text-slate-600">Tax (8%):</span>
+                  <span className="font-medium">${(cartTotal * 0.08).toFixed(2)}</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between text-lg font-bold text-red-700">
                   <span>Order Total:</span>
-                  <span>$53.99</span>
+                  <span>${(cartTotal * 1.08).toFixed(2)}</span>
                 </div>
                 
                 <div className="bg-blue-50 p-3 rounded text-xs text-blue-800 flex gap-2 items-start">
