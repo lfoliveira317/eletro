@@ -17,9 +17,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto py-3 flex items-center gap-4">
           {/* Logo */}
           <Link href="/">
-            <a className="text-2xl font-bold tracking-tighter flex items-center gap-1 hover:opacity-90 transition-opacity">
-              <span className="text-secondary text-3xl">⚡</span>
-              <span className="font-oswald uppercase">Eletro</span>
+            <a className="flex items-center hover:opacity-90 transition-opacity">
+              <img src="/images/logo.png" alt="Facilitate Comercial" className="h-12 w-auto object-contain bg-white/90 rounded px-2 py-1" />
             </a>
           </Link>
 
@@ -81,7 +80,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Secondary Navigation Row */}
-        <div className="bg-slate-800 text-white text-sm py-2 border-t border-slate-700">
+        <div className="bg-[#1e293b] text-white text-sm py-2 border-t border-slate-700">
           <div className="container mx-auto flex items-center gap-6 overflow-x-auto no-scrollbar">
             <button className="flex items-center gap-1 font-bold hover:text-secondary transition-colors whitespace-nowrap">
               <Menu className="h-5 w-5" />
@@ -102,7 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white pt-10">
+      <footer className="bg-[#1e293b] text-white pt-10">
         <div className="bg-slate-700 py-4 text-center hover:bg-slate-600 transition-colors cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <span className="text-sm font-medium">Voltar ao topo</span>
         </div>
@@ -147,10 +146,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         
         <div className="border-t border-slate-700 py-8 text-center text-slate-400 text-xs">
-          <div className="mb-2">
-            <span className="text-2xl font-bold text-white font-oswald tracking-tighter mr-1">Eletro</span>
+          <div className="mb-4 flex justify-center">
+            <img src="/images/logo.png" alt="Facilitate Comercial" className="h-8 w-auto object-contain bg-white/90 rounded px-2 py-1" />
           </div>
-          <p>&copy; 2024-2025, Eletro.com, Inc. ou suas afiliadas</p>
+          <p>&copy; 2024-2025, Facilitate Comercial, Inc. ou suas afiliadas</p>
         </div>
       </footer>
     </div>
