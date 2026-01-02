@@ -97,6 +97,23 @@ export default function Home() {
       <div className="container mx-auto pb-12 flex flex-col md:flex-row gap-6">
         {/* Sidebar Filters */}
         <aside className="w-full md:w-64 flex-shrink-0 space-y-6 bg-white p-4 rounded-sm shadow-sm h-fit">
+          <div className="flex justify-between items-center">
+            <h3 className="font-bold text-sm">Filters</h3>
+            {(selectedBrands.length > 0 || selectedCategories.length > 0 || priceRange[0] > 0 || priceRange[1] < 300) && (
+              <button 
+                onClick={() => {
+                  setSelectedBrands([]);
+                  setSelectedCategories([]);
+                  setPriceRange([0, 300]);
+                }}
+                className="text-xs text-blue-600 hover:underline"
+              >
+                Clear all
+              </button>
+            )}
+          </div>
+          <Separator />
+
           <div>
             <h3 className="font-bold text-sm mb-2">Department</h3>
             <div className="space-y-1.5">

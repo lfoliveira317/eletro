@@ -58,13 +58,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Right Actions */}
           <div className="flex items-center gap-4 text-sm">
             <div className="hidden md:flex flex-col hover:outline outline-1 outline-white p-1 rounded cursor-pointer">
-              <span className="text-[10px]">Hello, Sign in</span>
-              <span className="font-bold">Account & Lists</span>
-            </div>
-
-            <div className="hidden md:flex flex-col hover:outline outline-1 outline-white p-1 rounded cursor-pointer">
-              <span className="text-[10px]">Returns</span>
-              <span className="font-bold">& Orders</span>
+              <span className="text-[10px]">Hello, Guest</span>
+              <span className="font-bold">Start Shopping</span>
             </div>
 
             <Link href="/cart">

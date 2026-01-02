@@ -64,9 +64,11 @@ export default function Cart() {
                 <label htmlFor="gift" className="text-sm text-slate-700">This order contains a gift</label>
               </div>
               
-              <Button className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm shadow-sm mb-4">
-                Proceed to checkout
-              </Button>
+              <Link href="/checkout">
+                <Button className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm shadow-sm mb-4">
+                  Proceed to checkout
+                </Button>
+              </Link>
               
               <Separator className="my-4" />
               
