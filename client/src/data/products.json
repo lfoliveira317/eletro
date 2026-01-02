@@ -1,0 +1,122 @@
+[
+  {
+    "id": "bd-drill-20v",
+    "name": "BLACK+DECKER 20V MAX* Cordless Drill/Driver",
+    "brand": "BLACK+DECKER",
+    "category": "Tools",
+    "price": 49.99,
+    "rating": 4.5,
+    "reviews": 12450,
+    "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=500&q=80",
+    "description": "Ideal for drilling into wood, metal plastic and all screw driving tasks. Lithium Ion Technology & 20V MAX: Lighter, more compact, no memory, longer life.",
+    "isBestSeller": true
+  },
+  {
+    "id": "bd-coffee-12cup",
+    "name": "BLACK+DECKER 12-Cup Programmable Coffeemaker",
+    "brand": "BLACK+DECKER",
+    "category": "Appliances",
+    "price": 34.99,
+    "rating": 4.3,
+    "reviews": 8900,
+    "image": "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=500&q=80",
+    "description": "QuickTouch Programming - Easily set the time and program the auto brew feature with large, clearly marked buttons.",
+    "isBestSeller": false
+  },
+  {
+    "id": "bd-pressure-washer",
+    "name": "BLACK+DECKER Electric Pressure Washer, 1600 PSI",
+    "brand": "BLACK+DECKER",
+    "category": "Cleaning",
+    "price": 109.00,
+    "rating": 4.1,
+    "reviews": 3200,
+    "image": "https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&w=500&q=80",
+    "description": "1600 PSI and 1.2 GPM for efficient cleaning power. Ideal for cleaning driveways, decks, and patio furniture.",
+    "isBestSeller": true
+  },
+  {
+    "id": "bd-toaster-oven",
+    "name": "BLACK+DECKER 4-Slice Toaster Oven",
+    "brand": "BLACK+DECKER",
+    "category": "Appliances",
+    "price": 44.99,
+    "rating": 4.4,
+    "reviews": 5600,
+    "image": "/images/bd-toaster-oven.jpg",
+    "description": "EvenToast Technology - The toaster oven interior is specially designed for even toasting of up to 4 slices of bread at a time.",
+    "isBestSeller": false
+  },
+  {
+    "id": "bd-sander",
+    "name": "BLACK+DECKER Mouse Detail Sander",
+    "brand": "BLACK+DECKER",
+    "category": "Tools",
+    "price": 39.50,
+    "rating": 4.7,
+    "reviews": 9800,
+    "image": "https://images.unsplash.com/photo-1581147036324-c17ac41dfa6c?auto=format&fit=crop&w=500&q=80",
+    "description": "Compact design for sanding in tight spaces. High performance dust collection with micro-filtration.",
+    "isBestSeller": true
+  },
+  {
+    "id": "bd-vacuum-handheld",
+    "name": "BLACK+DECKER dustbuster AdvancedClean Cordless Handheld Vacuum",
+    "brand": "BLACK+DECKER",
+    "category": "Cleaning",
+    "price": 59.00,
+    "rating": 4.6,
+    "reviews": 45000,
+    "image": "/images/bd-vacuum-handheld.jpg",
+    "description": "Rotating slim nozzle targets dirt in tight spaces. Cyclonic action spins dust and debris away from the filter.",
+    "isBestSeller": true
+  },
+  {
+    "id": "dewalt-drill-kit",
+    "name": "DEWALT 20V MAX Cordless Drill Combo Kit",
+    "brand": "DEWALT",
+    "category": "Tools",
+    "price": 199.00,
+    "rating": 4.8,
+    "reviews": 21000,
+    "image": "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=500&q=80",
+    "description": "Compact, lightweight design fits into tight areas. High performance motor delivers 300 unit watts out (UWO) of power ability.",
+    "isBestSeller": true
+  },
+  {
+    "id": "bosch-jigsaw",
+    "name": "Bosch 7.0 Amp Top-Handle Jigsaw",
+    "brand": "Bosch",
+    "category": "Tools",
+    "price": 129.00,
+    "rating": 4.7,
+    "reviews": 1500,
+    "image": "/images/bosch-jigsaw.jpg",
+    "description": "Tool-less blade change system. Ambidextrous lock-on button for steady long cuts and user comfort and control.",
+    "isBestSeller": false
+  },
+  {
+    "id": "ninja-blender",
+    "name": "Ninja Professional Countertop Blender",
+    "brand": "Ninja",
+    "category": "Appliances",
+    "price": 89.99,
+    "rating": 4.8,
+    "reviews": 34000,
+    "image": "/images/ninja-blender.jpg",
+    "description": "Total Crushing Technology delivers unbeatable power with blades that pulverize and crush through ice, whole fruits and vegetables in seconds.",
+    "isBestSeller": true
+  },
+  {
+    "id": "karcher-pressure-washer",
+    "name": "Karcher K1700 Electric Power Pressure Washer",
+    "brand": "Karcher",
+    "category": "Cleaning",
+    "price": 135.00,
+    "rating": 4.2,
+    "reviews": 2800,
+    "image": "/images/karcher-pressure-washer.jpg",
+    "description": "1700 PSI, 1.2 GPM. Includes 3 nozzles: Turbo nozzle for maximum cleaning power on stubborn areas, 15° all-purpose nozzle and detergent nozzle.",
+    "isBestSeller": false
+  }
+]
