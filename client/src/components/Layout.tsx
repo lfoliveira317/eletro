@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Location (Amazon style) */}
           <div className="hidden md:flex flex-col text-xs leading-tight hover:outline outline-1 outline-white p-1 rounded cursor-pointer">
-            <span className="text-muted-foreground text-[10px]">Deliver to</span>
+            <span className="text-muted-foreground text-[10px]">Enviar para</span>
             <div className="flex items-center font-bold">
               <MapPin className="w-3 h-3 mr-1" />
               <span>New York 10001</span>
@@ -37,14 +37,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex w-full">
               <div className="relative w-full flex items-center">
                 <select className="h-10 px-2 text-xs bg-muted text-foreground border-r border-input rounded-l-sm focus:outline-none cursor-pointer hidden sm:block">
-                  <option>All Departments</option>
-                  <option>Tools</option>
-                  <option>Appliances</option>
-                  <option>Cleaning</option>
+                  <option>Todos os Departamentos</option>
+                  <option>Ferramentas</option>
+                  <option>Eletrodomésticos</option>
+                  <option>Limpeza</option>
                 </select>
                 <Input 
                   type="search" 
-                  placeholder="Search tools, appliances..." 
+                  placeholder="Buscar ferramentas, eletrodomésticos..." 
                   className="h-10 w-full rounded-none sm:rounded-l-none rounded-r-none bg-white text-black border-none focus-visible:ring-2 focus-visible:ring-secondary"
                 />
                 <Button 
@@ -60,8 +60,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Right Actions */}
           <div className="flex items-center gap-4 text-sm">
             <div className="hidden md:flex flex-col hover:outline outline-1 outline-white p-1 rounded cursor-pointer">
-              <span className="text-[10px]">Hello, Guest</span>
-              <span className="font-bold">Start Shopping</span>
+              <span className="text-[10px]">Olá, Visitante</span>
+              <span className="font-bold">Comece a Comprar</span>
             </div>
 
             <Link href="/cart">
@@ -74,7 +74,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </Badge>
                   )}
                 </div>
-                <span className="font-bold ml-1 hidden sm:inline">Cart</span>
+                <span className="font-bold ml-1 hidden sm:inline">Carrinho</span>
               </a>
             </Link>
           </div>
@@ -85,13 +85,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="container mx-auto flex items-center gap-6 overflow-x-auto no-scrollbar">
             <button className="flex items-center gap-1 font-bold hover:text-secondary transition-colors whitespace-nowrap">
               <Menu className="h-5 w-5" />
-              All
+              Todos
             </button>
-            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Today's Deals</a></Link>
-            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Customer Service</a></Link>
-            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Registry</a></Link>
-            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Gift Cards</a></Link>
-            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Sell</a></Link>
+            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Ofertas do Dia</a></Link>
+            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Atendimento ao Cliente</a></Link>
+            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Listas</a></Link>
+            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Cartões Presente</a></Link>
+            <Link href="/"><a className="hover:text-secondary transition-colors whitespace-nowrap">Vender</a></Link>
           </div>
         </div>
       </header>
@@ -104,44 +104,44 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="bg-primary text-white pt-10">
         <div className="bg-slate-700 py-4 text-center hover:bg-slate-600 transition-colors cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="text-sm font-medium">Back to top</span>
+          <span className="text-sm font-medium">Voltar ao topo</span>
         </div>
         
         <div className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
           <div>
-            <h3 className="font-bold mb-4 text-base">Get to Know Us</h3>
+            <h3 className="font-bold mb-4 text-base">Conheça-nos</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:underline">Careers</a></li>
+              <li><a href="#" className="hover:underline">Carreiras</a></li>
               <li><a href="#" className="hover:underline">Blog</a></li>
-              <li><a href="#" className="hover:underline">About Eletro</a></li>
-              <li><a href="#" className="hover:underline">Investor Relations</a></li>
+              <li><a href="#" className="hover:underline">Sobre a Eletro</a></li>
+              <li><a href="#" className="hover:underline">Relações com Investidores</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-base">Make Money with Us</h3>
+            <h3 className="font-bold mb-4 text-base">Ganhe Dinheiro Conosco</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:underline">Sell products on Eletro</a></li>
-              <li><a href="#" className="hover:underline">Sell on Eletro Business</a></li>
-              <li><a href="#" className="hover:underline">Become an Affiliate</a></li>
-              <li><a href="#" className="hover:underline">Advertise Your Products</a></li>
+              <li><a href="#" className="hover:underline">Venda na Eletro</a></li>
+              <li><a href="#" className="hover:underline">Venda na Eletro Empresas</a></li>
+              <li><a href="#" className="hover:underline">Seja um Afiliado</a></li>
+              <li><a href="#" className="hover:underline">Anuncie Seus Produtos</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-base">Eletro Payment Products</h3>
+            <h3 className="font-bold mb-4 text-base">Pagamentos Eletro</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:underline">Eletro Business Card</a></li>
-              <li><a href="#" className="hover:underline">Shop with Points</a></li>
-              <li><a href="#" className="hover:underline">Reload Your Balance</a></li>
+              <li><a href="#" className="hover:underline">Cartão Eletro</a></li>
+              <li><a href="#" className="hover:underline">Compre com Pontos</a></li>
+              <li><a href="#" className="hover:underline">Recarregue seu Saldo</a></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-base">Let Us Help You</h3>
+            <h3 className="font-bold mb-4 text-base">Deixe-nos Ajudar</h3>
             <ul className="space-y-2 text-slate-300">
-              <li><a href="#" className="hover:underline">Your Account</a></li>
-              <li><a href="#" className="hover:underline">Your Orders</a></li>
-              <li><a href="#" className="hover:underline">Shipping Rates & Policies</a></li>
-              <li><a href="#" className="hover:underline">Returns & Replacements</a></li>
-              <li><a href="#" className="hover:underline">Help</a></li>
+              <li><a href="#" className="hover:underline">Sua Conta</a></li>
+              <li><a href="#" className="hover:underline">Seus Pedidos</a></li>
+              <li><a href="#" className="hover:underline">Frete e Prazos</a></li>
+              <li><a href="#" className="hover:underline">Devoluções e Reembolsos</a></li>
+              <li><a href="#" className="hover:underline">Ajuda</a></li>
             </ul>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="mb-2">
             <span className="text-2xl font-bold text-white font-oswald tracking-tighter mr-1">Eletro</span>
           </div>
-          <p>&copy; 2024-2025, Eletro.com, Inc. or its affiliates</p>
+          <p>&copy; 2024-2025, Eletro.com, Inc. ou suas afiliadas</p>
         </div>
       </footer>
     </div>

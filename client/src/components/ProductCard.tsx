@@ -28,7 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="relative pt-4 px-4 flex justify-center items-center h-48 bg-white group">
         {product.isBestSeller && (
           <Badge className="absolute top-0 left-0 rounded-none rounded-br-sm bg-secondary hover:bg-secondary text-white font-bold text-[10px] uppercase tracking-wider z-10">
-            Best Seller
+            Mais Vendido
           </Badge>
         )}
         <img 
@@ -61,13 +61,13 @@ export default function ProductCard({ product }: { product: Product }) {
         
         <div className="mt-auto">
           <div className="flex items-baseline gap-1">
-            <span className="text-xs align-top mt-1">$</span>
+            <span className="text-xs align-top mt-1 mr-0.5">R$</span>
             <span className="text-2xl font-bold text-slate-900">{Math.floor(product.price)}</span>
-            <span className="text-xs align-top mt-1">{(product.price % 1).toFixed(2).substring(1)}</span>
+            <span className="text-xs align-top mt-1">,{(product.price % 1).toFixed(2).substring(2)}</span>
           </div>
           
           <div className="text-xs text-slate-500 mt-1">
-            Delivery <span className="font-bold text-slate-700">Tomorrow, Jan 2</span>
+            Entrega <span className="font-bold text-slate-700">Amanhã, 2 de Jan</span>
           </div>
         </div>
       </CardContent>
@@ -77,7 +77,7 @@ export default function ProductCard({ product }: { product: Product }) {
           onClick={() => addToCart(product)}
           className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm h-8 text-xs shadow-sm"
         >
-          Add to Cart
+          Adicionar ao Carrinho
         </Button>
       </CardFooter>
     </Card>

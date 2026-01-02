@@ -16,8 +16,8 @@ export default function Cart() {
           {/* Cart Items Section */}
           <div className="lg:col-span-9 bg-white p-6 rounded-sm shadow-sm border border-gray-200">
             <div className="flex justify-between items-end mb-2">
-              <h1 className="text-2xl font-medium text-slate-900">Shopping Cart</h1>
-              <span className="text-sm text-slate-500">Price</span>
+              <h1 className="text-2xl font-medium text-slate-900">Carrinho de Compras</h1>
+              <span className="text-sm text-slate-500">Preço</span>
             </div>
             <Separator className="mb-6" />
             
@@ -27,11 +27,11 @@ export default function Cart() {
                   <div className="bg-slate-100 p-6 rounded-full">
                     <span className="text-4xl">🛒</span>
                   </div>
-                  <h2 className="text-xl font-bold text-slate-800">Your Eletro Cart is empty</h2>
-                  <p className="text-slate-600">Check out our latest tools and appliances to find what you need.</p>
+                  <h2 className="text-xl font-bold text-slate-800">Seu Carrinho Eletro está vazio</h2>
+                  <p className="text-slate-600">Confira nossas últimas ferramentas e eletrodomésticos para encontrar o que você precisa.</p>
                   <Link href="/">
                     <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold mt-4">
-                      Continue Shopping
+                      Continuar Comprando
                     </Button>
                   </Link>
                 </div>
@@ -52,16 +52,16 @@ export default function Cart() {
                           </a>
                         </Link>
                         <div className="text-lg font-bold text-slate-900">
-                          ${item.price.toFixed(2)}
+                          R$ {item.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </div>
                       </div>
                       
-                      <div className="text-sm text-green-700 font-medium">In Stock</div>
-                      <div className="text-xs text-slate-500">Eligible for FREE Shipping</div>
+                      <div className="text-sm text-green-700 font-medium">Em Estoque</div>
+                      <div className="text-xs text-slate-500">Elegível para Frete GRÁTIS</div>
                       
                       <div className="flex items-center gap-4 mt-2">
                         <div className="flex items-center gap-2">
-                          <label htmlFor={`qty-${item.id}`} className="text-sm text-slate-600">Qty:</label>
+                          <label htmlFor={`qty-${item.id}`} className="text-sm text-slate-600">Qtd:</label>
                           <select 
                             id={`qty-${item.id}`}
                             value={item.quantity}
@@ -78,7 +78,7 @@ export default function Cart() {
                           onClick={() => removeFromCart(item.id)}
                           className="text-sm text-blue-600 hover:underline hover:text-secondary flex items-center gap-1"
                         >
-                          <Trash2 className="w-3 h-3" /> Delete
+                          <Trash2 className="w-3 h-3" /> Excluir
                         </button>
                       </div>
                     </div>
@@ -87,7 +87,7 @@ export default function Cart() {
                 
                 <div className="flex justify-end pt-2">
                   <div className="text-lg">
-                    Subtotal ({cartCount} items): <span className="font-bold">${cartTotal.toFixed(2)}</span>
+                    Subtotal ({cartCount} itens): <span className="font-bold">R$ {cartTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
                   </div>
                 </div>
               </div>
@@ -100,17 +100,17 @@ export default function Cart() {
               {cartTotal >= 35 && (
                 <div className="flex items-center gap-2 text-green-700 text-sm mb-4">
                   <CheckCircle2 className="w-5 h-5" />
-                  <span>Your order qualifies for FREE Shipping.</span>
+                  <span>Seu pedido se qualifica para Frete GRÁTIS.</span>
                 </div>
               )}
               
               <div className="text-lg font-medium mb-4">
-                Subtotal ({cartCount} items): <span className="font-bold">${cartTotal.toFixed(2)}</span>
+                Subtotal ({cartCount} itens): <span className="font-bold">R$ {cartTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
               </div>
               
               <div className="flex items-center gap-2 mb-4">
                 <input type="checkbox" id="gift" className="rounded-sm border-gray-300 text-secondary focus:ring-secondary" />
-                <label htmlFor="gift" className="text-sm text-slate-700">This order contains a gift</label>
+                <label htmlFor="gift" className="text-sm text-slate-700">Este pedido contém um presente</label>
               </div>
               
               <Link href="/checkout">
@@ -118,14 +118,14 @@ export default function Cart() {
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold rounded-sm shadow-sm mb-4"
                   disabled={items.length === 0}
                 >
-                  Proceed to checkout
+                  Fechar pedido
                 </Button>
               </Link>
               
               <Separator className="my-4" />
               
               <div className="space-y-4">
-                <h3 className="font-bold text-sm">Recent views</h3>
+                <h3 className="font-bold text-sm">Vistos recentemente</h3>
                 {/* Mock recent items */}
                 <div className="flex gap-2 overflow-hidden">
                   <div className="w-16 h-16 bg-gray-100 rounded-sm flex items-center justify-center text-xs text-gray-400">Item</div>

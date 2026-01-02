@@ -12,7 +12,7 @@ export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState([0, 300]);
+  const [priceRange, setPriceRange] = useState([0, 1500]);
 
   useEffect(() => {
     // Load products from JSON
@@ -64,13 +64,13 @@ export default function Home() {
         />
         <div className="absolute top-1/2 left-8 md:left-16 transform -translate-y-1/2 z-20 max-w-lg text-white">
           <h1 className="text-4xl md:text-6xl font-oswald font-bold mb-4 tracking-tight drop-shadow-lg">
-            BUILT FOR <span className="text-secondary">PROS</span>
+            FEITO PARA <span className="text-secondary">PROS</span>
           </h1>
           <p className="text-lg md:text-xl mb-6 text-slate-200 drop-shadow-md font-light">
-            Industrial grade tools and premium home appliances for the modern maker.
+            Ferramentas de nível industrial e eletrodomésticos premium para o criador moderno.
           </p>
           <button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-sm shadow-lg transition-transform hover:scale-105">
-            SHOP NOW
+            COMPRAR AGORA
           </button>
         </div>
       </div>
@@ -79,16 +79,16 @@ export default function Home() {
       <div className="container mx-auto -mt-16 relative z-30 mb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { name: "Power Tools", img: "/images/category-tools.jpg", link: "#" },
-            { name: "Home Appliances", img: "/images/category-appliances.jpg", link: "#" },
-            { name: "Cleaning Solutions", img: "/images/category-cleaning.jpg", link: "#" }
+            { name: "Ferramentas Elétricas", img: "/images/category-tools.jpg", link: "#" },
+            { name: "Eletrodomésticos", img: "/images/category-appliances.jpg", link: "#" },
+            { name: "Soluções de Limpeza", img: "/images/category-cleaning.jpg", link: "#" }
           ].map((cat, idx) => (
             <div key={idx} className="bg-white p-4 rounded-sm shadow-md hover:shadow-xl transition-shadow cursor-pointer flex flex-col items-center text-center group">
               <h3 className="text-xl font-bold font-oswald mb-2 text-slate-800 group-hover:text-secondary transition-colors">{cat.name}</h3>
               <div className="w-full aspect-square overflow-hidden mb-3">
                 <img src={cat.img} alt={cat.name} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <span className="text-sm text-blue-600 hover:underline hover:text-secondary">See more</span>
+              <span className="text-sm text-blue-600 hover:underline hover:text-secondary">Ver mais</span>
             </div>
           ))}
         </div>
@@ -98,24 +98,24 @@ export default function Home() {
         {/* Sidebar Filters */}
         <aside className="w-full md:w-64 flex-shrink-0 space-y-6 bg-white p-4 rounded-sm shadow-sm h-fit">
           <div className="flex justify-between items-center">
-            <h3 className="font-bold text-sm">Filters</h3>
+            <h3 className="font-bold text-sm">Filtros</h3>
             {(selectedBrands.length > 0 || selectedCategories.length > 0 || priceRange[0] > 0 || priceRange[1] < 300) && (
               <button 
                 onClick={() => {
                   setSelectedBrands([]);
                   setSelectedCategories([]);
-                  setPriceRange([0, 300]);
+                  setPriceRange([0, 1500]);
                 }}
                 className="text-xs text-blue-600 hover:underline"
               >
-                Clear all
+                Limpar tudo
               </button>
             )}
           </div>
           <Separator />
 
           <div>
-            <h3 className="font-bold text-sm mb-2">Department</h3>
+            <h3 className="font-bold text-sm mb-2">Departamento</h3>
             <div className="space-y-1.5">
               {categories.map(cat => (
                 <div key={cat} className="flex items-center space-x-2">
@@ -134,7 +134,7 @@ export default function Home() {
           <Separator />
 
           <div>
-            <h3 className="font-bold text-sm mb-2">Featured Brands</h3>
+            <h3 className="font-bold text-sm mb-2">Marcas em Destaque</h3>
             <div className="space-y-1.5">
               {brands.map(brand => (
                 <div key={brand} className="flex items-center space-x-2">
@@ -153,26 +153,26 @@ export default function Home() {
           <Separator />
 
           <div>
-            <h3 className="font-bold text-sm mb-4">Price</h3>
+            <h3 className="font-bold text-sm mb-4">Preço</h3>
             <Slider 
-              defaultValue={[0, 300]} 
-              max={300} 
-              step={10} 
+              defaultValue={[0, 1500]} 
+              max={1500} 
+              step={50} 
               value={priceRange}
               onValueChange={setPriceRange}
               className="mb-4"
             />
             <div className="flex items-center justify-between text-sm">
-              <span className="border px-2 py-1 rounded-sm bg-slate-50">${priceRange[0]}</span>
+              <span className="border px-2 py-1 rounded-sm bg-slate-50">R$ {priceRange[0]}</span>
               <span className="text-slate-400">-</span>
-              <span className="border px-2 py-1 rounded-sm bg-slate-50">${priceRange[1]}+</span>
+              <span className="border px-2 py-1 rounded-sm bg-slate-50">R$ {priceRange[1]}+</span>
             </div>
           </div>
           
           <Separator />
           
           <div>
-            <h3 className="font-bold text-sm mb-2">Avg. Customer Review</h3>
+            <h3 className="font-bold text-sm mb-2">Avaliação Média</h3>
             <div className="space-y-1 cursor-pointer">
               {[4, 3, 2, 1].map(stars => (
                 <div key={stars} className="flex items-center gap-1 hover:bg-slate-50 p-1 -ml-1 rounded">
@@ -181,7 +181,7 @@ export default function Home() {
                       <span key={i} className={i < stars ? "fill-current" : "text-gray-300"}>★</span>
                     ))}
                   </div>
-                  <span className="text-sm text-slate-600">& Up</span>
+                  <span className="text-sm text-slate-600">e Acima</span>
                 </div>
               ))}
             </div>
@@ -191,15 +191,15 @@ export default function Home() {
         {/* Product Grid */}
         <div className="flex-1">
           <div className="mb-4 flex items-center justify-between bg-white p-2 px-4 rounded-sm shadow-sm border border-gray-200">
-            <span className="text-sm font-bold">{filteredProducts.length} results</span>
+            <span className="text-sm font-bold">{filteredProducts.length} resultados</span>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-500">Sort by:</span>
+              <span className="text-sm text-slate-500">Ordenar por:</span>
               <select className="text-sm border-none bg-transparent font-medium focus:outline-none cursor-pointer hover:text-secondary">
-                <option>Featured</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-                <option>Avg. Customer Review</option>
-                <option>Newest Arrivals</option>
+                <option>Destaques</option>
+                <option>Preço: Menor para Maior</option>
+                <option>Preço: Maior para Menor</option>
+                <option>Avaliação Média</option>
+                <option>Mais Recentes</option>
               </select>
             </div>
           </div>
@@ -212,8 +212,8 @@ export default function Home() {
             </div>
           ) : (
             <div className="bg-white p-12 text-center rounded-sm shadow-sm">
-              <h3 className="text-xl font-bold text-slate-800 mb-2">No products found</h3>
-              <p className="text-slate-500">Try adjusting your filters to see more results.</p>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Nenhum produto encontrado</h3>
+              <p className="text-slate-500">Tente ajustar seus filtros para ver mais resultados.</p>
             </div>
           )}
         </div>
